@@ -1,0 +1,364 @@
+18	  {
+19	    fprintf(stderr, "ERROR: bit_position is not in 0 to 31 range.");
+20	    exit(0);
+21	  }
+22	
+23	  // Create a mask at the specified bit position.
+39	  printf("Enter a bit position (MSB is 31, LSB is 0): ");
+40	  scanf("%d", &bit_position); 
+41	
+42	  // Call function to determine if the bit is set.
+43	  bit_set = isBitSet(bit_pattern, bit_position);
+44	
+45	  if ( bit_set ) 
+46	  {
+47	   printf("In 0x%X, bit position %d is set\n",
+48	       bit_pattern, bit_position);
+Breakpoint 1 at 0x400763: file hw1.c, line 40.
+Breakpoint 2 at 0x400779: file hw1.c, line 41.
+Note: breakpoint 2 also set at pc 0x400779.
+Breakpoint 3 at 0x400779: file hw1.c, line 43.
+Starting program: /home/cvn2534/cse3320-projects/hw1/hw1 
+
+Breakpoint 1, main () at hw1.c:40
+40	  scanf("%d", &bit_position); 
+$1 = 64
+$2 = 0x40
+#0  main () at hw1.c:40
+__isoc99_scanf (format=0x4008fd "%d") at isoc99_scanf.c:27
+27	{
+#0  __isoc99_scanf (format=0x4008fd "%d") at isoc99_scanf.c:27
+#1  0x0000000000400779 in main () at hw1.c:40
+32	  _IO_acquire_lock_clear_flags2 (stdin);
+Breakpoint 4 at 0x7ffff7a82e20: file isoc99_scanf.c, line 26.
+Continuing.
+
+Breakpoint 2, main () at hw1.c:43
+43	  bit_set = isBitSet(bit_pattern, bit_position);
+$3 = 0x40
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000400763 in main at hw1.c:40
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x0000000000400779 in main at hw1.c:41
+	breakpoint already hit 1 time
+3       breakpoint     keep y   0x0000000000400779 in main at hw1.c:43
+	breakpoint already hit 1 time
+4       breakpoint     keep y   0x00007ffff7a82e20 in __isoc99_scanf 
+                                                   at isoc99_scanf.c:26
+Num     Type           Disp Enb Address            What
+2       breakpoint     keep y   0x0000000000400779 in main at hw1.c:41
+	breakpoint already hit 1 time
+3       breakpoint     keep y   0x0000000000400779 in main at hw1.c:43
+	breakpoint already hit 1 time
+4       breakpoint     keep y   0x00007ffff7a82e20 in __isoc99_scanf 
+                                                   at isoc99_scanf.c:26
+bit_pattern = 64
+bit_position = 32767
+bit_set = 0
+No arguments.
+All defined functions:
+
+File hw1.c:
+unsigned int isBitSet(unsigned int, unsigned int);
+int main();
+
+File dl-conflict.c:
+void _dl_resolve_conflicts(struct link_map *, Elf64_Rela *, Elf64_Rela *);
+
+File ../sysdeps/unix/sysv/linux/wordsize-64/fxstat.c:
+int __GI___fxstat(int, int, struct stat *);
+
+File ../sysdeps/posix/closedir.c:
+int __closedir(DIR *);
+
+File ../sysdeps/unix/sysv/linux/dl-execstack.c:
+int __GI__dl_make_stack_executable(void **);
+
+File ../sysdeps/unix/sysv/linux/wordsize-64/lxstat.c:
+int __GI___lxstat(int, const char *, struct stat *);
+
+File bsearch.c:
+void *bsearch(const void *, const void *, size_t, size_t, 
+    int (*)(const void *, const void *));
+
+File ../sysdeps/unix/sysv/linux/dl-origin.c:
+const char *_dl_get_origin(void);
+
+File dl-caller.c:
+int _dl_check_caller(const void *, enum allowmask);
+
+File ../string/memmove.c:
+void *memmove(void *, const void *, size_t);
+
+File strdup.c:
+char *__strdup(const char *);
+
+File ../sysdeps/posix/fdopendir.c:
+DIR *__fdopendir(int);
+
+File dl-open.c:
+int _dl_addr_inside_object(struct link_map *, const Elf64_Addr);
+void *_dl_open(const char *, int, const void *, Lmid_t, int, char **, char **);
+void _dl_show_scope(struct link_map *, int);
+static int add_to_global(struct link_map *);
+static void dl_open_worker(void *);
+
+File ../misc/sbrk.c:
+void *__sbrk(intptr_t);
+
+File ../sysdeps/unix/sysv/linux/wordsize-64/fxstatat.c:
+int __fxstatat(int, int, const char *, struct stat *, int);
+
+File dl-profile.c:
+void _dl_mcount(Elf64_Addr, Elf64_Addr);
+void _dl_start_profile(void);
+
+File dl-init.c:
+void _dl_init(struct link_map *, int, char **, char **);
+
+File dl-cache.c:
+int _dl_cache_libcmp(const char *, const char *);
+char *_dl_load_cache_lookup(const char *);
+void _dl_unload_cache(void);
+
+File ../sysdeps/unix/sysv/linux/dl-openat64.c:
+int openat64(int, const char *, int, ...);
+
+File ../sysdeps/posix/rewinddir.c:
+void rewinddir(DIR *);
+
+File ../sysdeps/unix/sysv/linux/_exit.c:
+void _exit(int);
+
+File dl-scope.c:
+int _dl_scope_free(void *);
+
+File ../string/memcmp.c:
+int memcmp(const void *, const void *, size_t);
+
+File ../sysdeps/unix/sysv/linux/prof-freq.c:
+int __profile_frequency(void);
+
+File ../sysdeps/posix/readdir.c:
+struct dirent *__readdir(DIR *);
+
+File ../sysdeps/unix/sysv/linux/x86_64/brk.c:
+int __brk(void *);
+
+File dl-debug.c:
+void __GI__dl_debug_state(void);
+struct r_debug *_dl_debug_initialize(Elf64_Addr, Lmid_t);
+
+File dl-version.c:
+int _dl_check_all_versions(struct link_map *, int, int);
+int _dl_check_map_versions(struct link_map *, int, int);
+static int match_symbol(const char *, Lmid_t, Elf64_Word, const char *, 
+    struct link_map *, int, int);
+
+File dl-reloc.c:
+void _dl_allocate_static_tls(struct link_map *);
+void _dl_nothread_init_static_tls(struct link_map *);
+void _dl_protect_relro(struct link_map *);
+void _dl_reloc_bad_type(struct link_map *, unsigned int, int);
+void _dl_relocate_object(struct r_scope_elem **, int, int);
+int _dl_try_allocate_static_tls(struct link_map *);
+
+File ../sysdeps/posix/profil.c:
+int __profil(u_short *, size_t, size_t, u_int);
+
+File ../sysdeps/unix/sysv/linux/x86_64/profil-counter.h:
+static void profil_counter(int, siginfo_t *, struct ucontext *);
+
+File ../sysdeps/x86_64/multiarch/init-arch.c:
+const struct cpu_features *__get_cpu_features(void);
+void __init_cpu_features(void);
+
+File dl-object.c:
+void _dl_add_to_namespace_list(struct link_map *, Lmid_t);
+struct link_map *_dl_new_object(char *, const char *, int, struct link_map *, 
+    int, Lmid_t);
+
+File ../sysdeps/unix/sysv/linux/fcntl.c:
+int __libc_fcntl(int, int, ...);
+
+File dl-lookup.c:
+lookup_t _dl_lookup_symbol_x(const char *, struct link_map *, 
+    const Elf64_Sym **, struct r_scope_elem **, 
+    const struct r_found_version *, int, int, struct link_map *);
+void _dl_setup_hash(struct link_map *);
+static int do_lookup_x(uint_fast32_t, unsigned long *, struct sym_val *, 
+    struct r_scope_elem *, size_t, int, struct link_map *, struct link_map *);
+
+File ../nptl/sysdeps/unix/sysv/linux/getpid.c:
+pid_t __getpid(void);
+
+File wordcopy.c:
+void _wordcopy_bwd_aligned(long, long, size_t);
+Quit
+A debugging session is active.
+
+	Inferior 1 [process 17216] will be killed.
+
+Quit anyway? (y or n) 18	  {
+19	    fprintf(stderr, "ERROR: bit_position is not in 0 to 31 range.");
+20	    exit(0);
+21	  }
+22	
+23	  // Create a mask at the specified bit position.
+39	  printf("Enter a bit position (MSB is 31, LSB is 0): ");
+40	  scanf("%d", &bit_position); 
+41	
+42	  // Call function to determine if the bit is set.
+43	  bit_set = isBitSet(bit_pattern, bit_position);
+44	
+45	  if ( bit_set ) 
+46	  {
+47	   printf("In 0x%X, bit position %d is set\n",
+48	       bit_pattern, bit_position);
+Breakpoint 1 at 0x4007aa: file hw1.c, line 49.
+Breakpoint 2 at 0x400763: file hw1.c, line 40.
+Breakpoint 3 at 0x400779: file hw1.c, line 41.
+Note: breakpoint 3 also set at pc 0x400779.
+Breakpoint 4 at 0x400779: file hw1.c, line 43.
+Starting program: /home/cvn2534/cse3320-projects/hw1/hw1 
+
+Breakpoint 2, main () at hw1.c:40
+40	  scanf("%d", &bit_position); 
+$1 = 64
+$2 = 0x40
+#0  main () at hw1.c:40
+__isoc99_scanf (format=0x4008fd "%d") at isoc99_scanf.c:27
+27	{
+#0  __isoc99_scanf (format=0x4008fd "%d") at isoc99_scanf.c:27
+#1  0x0000000000400779 in main () at hw1.c:40
+32	  _IO_acquire_lock_clear_flags2 (stdin);
+Breakpoint 5 at 0x7ffff7a82e20: file isoc99_scanf.c, line 26.
+Continuing.
+
+Breakpoint 3, main () at hw1.c:43
+43	  bit_set = isBitSet(bit_pattern, bit_position);
+$3 = 0x40
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00000000004007aa in main at hw1.c:49
+2       breakpoint     keep y   0x0000000000400763 in main at hw1.c:40
+	breakpoint already hit 1 time
+3       breakpoint     keep y   0x0000000000400779 in main at hw1.c:41
+	breakpoint already hit 1 time
+4       breakpoint     keep y   0x0000000000400779 in main at hw1.c:43
+	breakpoint already hit 1 time
+5       breakpoint     keep y   0x00007ffff7a82e20 in __isoc99_scanf 
+                                                   at isoc99_scanf.c:26
+Undefined command: "exit".  Try "help".
+A debugging session is active.
+
+	Inferior 1 [process 26721] will be killed.
+
+Quit anyway? (y or n) 18	  {
+19	    fprintf(stderr, "ERROR: bit_position is not in 0 to 31 range.");
+20	    exit(0);
+21	  }
+22	
+23	  // Create a mask at the specified bit position.
+39	  printf("Enter a bit position (MSB is 31, LSB is 0): ");
+40	  scanf("%d", &bit_position); 
+41	
+42	  // Call function to determine if the bit is set.
+43	  bit_set = isBitSet(bit_pattern, bit_position);
+44	
+45	  if ( bit_set ) 
+46	  {
+47	   printf("In 0x%X, bit position %d is set\n",
+48	       bit_pattern, bit_position);
+Breakpoint 1 at 0x400779: file hw1.c, line 43.
+Starting program: /home/cvn2534/cse3320-projects/hw1/hw1 
+
+Breakpoint 1, main () at hw1.c:43
+43	  bit_set = isBitSet(bit_pattern, bit_position);
+$1 = 32
+$2 = 0x20
+#0  main () at hw1.c:43
+isBitSet (bit_pattern=32, bit_position=1) at hw1.c:17
+17	  if (bit_position >= 32) 
+#0  isBitSet (bit_pattern=32, bit_position=1) at hw1.c:17
+#1  0x0000000000400788 in main () at hw1.c:43
+24	  unsigned int bit_mask = 1<<bit_position;
+Breakpoint 2 at 0x400715: file hw1.c, line 26.
+Continuing.
+
+Breakpoint 2, isBitSet (bit_pattern=32, bit_position=1) at hw1.c:28
+28	  return bit_pattern & bit_mask;
+$3 = 0x2
+$4 = 0x20
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x0000000000400779 in main at hw1.c:43
+	breakpoint already hit 1 time
+2       breakpoint     keep y   0x0000000000400715 in isBitSet at hw1.c:26
+	breakpoint already hit 1 time
+Num     Type           Disp Enb Address            What
+2       breakpoint     keep y   0x0000000000400715 in isBitSet at hw1.c:26
+	breakpoint already hit 1 time
+bit_mask = 2
+bit_pattern = 32
+bit_position = 1
+List of classes of commands:
+
+aliases -- Aliases of other commands
+breakpoints -- Making program stop at certain points
+data -- Examining data
+files -- Specifying and examining files
+internals -- Maintenance commands
+obscure -- Obscure features
+running -- Running the program
+stack -- Examining the stack
+status -- Status inquiries
+support -- Support facilities
+tracepoints -- Tracing of program execution without stopping the program
+user-defined -- User-defined commands
+
+Type "help" followed by a class name for a list of commands in that class.
+Type "help all" for the list of all commands.
+Type "help" followed by command name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+Status inquiries.
+
+List of commands:
+
+info -- Generic command for showing things about the program being debugged
+info address -- Describe where symbol SYM is stored
+info all-registers -- List of all registers and their contents
+info args -- Argument variables of current stack frame
+info auto-load -- Print current status of auto-loaded files
+info auto-load gdb-scripts -- Print the list of automatically loaded sequences of commands
+info auto-load libthread-db -- Print the list of loaded inferior specific libthread_db
+info auto-load local-gdbinit -- Print whether current directory .gdbinit file has been loaded
+info auto-load python-scripts -- Print the list of automatically loaded Python scripts
+info auto-load-scripts -- Print the list of automatically loaded Python scripts
+info auxv -- Display the inferior's auxiliary vector
+info bookmarks -- Status of user-settable bookmarks
+info breakpoints -- Status of specified breakpoints (all user-settable breakpoints if no argument)
+info checkpoints -- IDs of currently known checkpoints
+info classes -- All Objective-C classes
+info common -- Print out the values contained in a Fortran COMMON block
+info copying -- Conditions for redistributing copies of GDB
+info dcache -- Print information on the dcache performance
+info display -- Expressions to display when program stops
+info extensions -- All filename extensions associated with a source language
+info files -- Names of targets and files being debugged
+info float -- Print the status of the floating point unit
+info frame -- All about selected stack frame
+info frame-filter -- List all registered Python frame-filters
+info functions -- All function names
+info handle -- What debugger does when program gets various signals
+info inferiors -- IDs of specified inferiors (all inferiors if no argument)
+info line -- Core addresses of the code for a source line
+info locals -- Local variables of current stack frame
+info macro -- Show the definition of MACRO
+info macros -- Show the definitions of all macros at LINESPEC
+info mem -- Memory region attributes
+info os -- Show OS data ARG
+info pretty-printer -- GDB command to list all registered pretty-printers
+info probes -- Show available static probes
+info probes all -- Show information about all type of probes
+info probes stap -- Show information about SystemTap static probes
+Quit
